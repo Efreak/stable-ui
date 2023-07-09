@@ -18,10 +18,10 @@ import { useVideoStore } from "./video";
 function getDefaultStore() {
     return <ModelGenerationInputStable>{
         steps: 30,
-        n: 2,
+        n: 1,
         sampler_name: "k_euler",
-        width: 512,  // make sure these are divisible by 64
-        height: 512, // make sure these are divisible by 64
+        width: 1024,  // make sure these are divisible by 64
+        height: 1024, // make sure these are divisible by 64
         cfg_scale: 7,
         seed_variation: 1000,
         seed: "",

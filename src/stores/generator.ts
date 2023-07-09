@@ -132,7 +132,7 @@ export const useGeneratorStore = defineStore("generator", () => {
         model: {
             name: "Model",
             enabled: false,
-            selected: ["stable_diffusion"],
+            selected: ["SDXL_beta::stability.ai#6901"],
             noneMessage: "Failed to generate: No model selected.",
             mapToParam: el => el.modelName,
         },

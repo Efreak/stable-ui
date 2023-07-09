@@ -1,3 +1,18 @@
+# fork notes
+
+### THIS FORK WILL NOT BE MAINTAINED OR UPDATED.
+
+#### I suggest using [ArtBot](https://github.com/daveschumaker/artbot-for-stable-diffusion) instead 😏
+
+
+This is a fork of aqualxx/stable-ui, an unmaintained frontend for <a href="https://aihorde.net">AI Horde</a> 
+crowd-sourced stable diffusion. It contains all the same bugs and limitations the original stable-ui 
+contains, but has been updated to support SDXL, which currently requires a batch size of 2, and recommends a 
+minimum of 1024x1024. Instead of updating this properly, I've simply added a check to see if the model 
+includes SDXL, and changed the requested number of images to 2; that means for every 1 SDXL image you 
+request here, you'll get 2 images back instead of 1. The only niceties I've added beyond this is to set the 
+default model to SDXL and the defaults size to 1024x1024. Everything else is the same.
+
 # stable-ui 🔥
 
 [Stable UI](https://aqualxx.github.io/stable-ui/) is a web user interface designed to generate, save, and view images using Stable Diffusion, with the goal being able to provide Stable Diffusion to anyone for 100% free.

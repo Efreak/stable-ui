@@ -18,7 +18,7 @@ import { useVideoStore } from "./video";
 function getDefaultStore() {
     return <ModelGenerationInputStable>{
         steps: 30,
-        n: 1,
+        n: 2,
         sampler_name: "k_euler",
         width: 512,  // make sure these are divisible by 64
         height: 512, // make sure these are divisible by 64
@@ -458,7 +458,7 @@ export const useGeneratorStore = defineStore("generator", () => {
                                                         clip_skip: currentClipSkip,
                                                         karras: currentKarras,
                                                         hires_fix: currentHiResFix,
-                                                        n: 1
+                                                        n: (currentModel.indexOf('SDXL') > -1 ? 2 : 1) // SDXL requires 2 images.
                                                     },
                                                     nsfw: nsfw.value,
                                                     censor_nsfw: !nsfw.value,

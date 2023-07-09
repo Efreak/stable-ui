@@ -188,7 +188,7 @@ export const useGeneratorStore = defineStore("generator", () => {
         }
         return selectedModelData.value?.description || "Not Found!";
     })
-    const selectedModel = ref("stable_diffusion");
+    const selectedModel = ref("SDXL_beta::stability.ai#6901");
     const selectedModelData = computed<IModelData>(() => modelsData.value.find(el => el.name === selectedModel.value) || {});
     const filteredAvailableModels = computed(() => {
         if (availableModels.value.length === 0) return [];
@@ -197,7 +197,7 @@ export const useGeneratorStore = defineStore("generator", () => {
                 return el.value.includes("inpainting") && el.value !== "Stable Diffusion 2 Depth";
             }
             if (generatorType.value === "Img2Img") {
-                return el.value !== "stable_diffusion_2.0" && !el.value.includes("inpainting");
+                return el.value !== "stable_diffusion_2.0" && !el.value.includes("inpainting") && el.value !== "SDXL_beta::stability.ai#6901";
             }
             return !el.value.includes("inpainting") && el.value !== "pix2pix" && el.value !== "Stable Diffusion 2 Depth";
         });

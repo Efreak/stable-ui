@@ -66,7 +66,7 @@ const status = computed(() => {
         <div>
             <el-collapse style="margin-top: 0.5rem; --el-collapse-header-height: 2.5rem">
                 <el-collapse-item :title="worker.models?.length + ' model(s)'" name="1">
-                    <strong>{{worker.models?.length === 0 ? "stable_diffusion" : ""}}</strong>
+                    <strong>{{worker.models?.length === 0 ? "SDXL_beta::stability.ai#6901" : ""}}</strong>
                     <strong v-for="(model, index) of worker.models" :key="index">
                         {{model}}{{index === worker.models?.length ? "" : ", "}}
                     </strong>

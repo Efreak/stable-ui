@@ -13,6 +13,8 @@ includes SDXL, and changed the requested number of images to 2; that means for e
 request here, you'll get 2 images back instead of 1. The only niceties I've added beyond this is to set the 
 default model to SDXL and the defaults size to 1024x1024. Everything else is the same.
 
+Update: I applied a fix to the leaderboard, [as found by @super.skirv on Discord](https://discord.com/channels/781145214752129095/1107629376889172098/1157447364827697182).
+
 # stable-ui 🔥
 
 [Stable UI](https://aqualxx.github.io/stable-ui/) is a web user interface designed to generate, save, and view images using Stable Diffusion, with the goal being able to provide Stable Diffusion to anyone for 100% free.

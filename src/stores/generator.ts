@@ -132,7 +132,7 @@ export const useGeneratorStore = defineStore("generator", () => {
         model: {
             name: "Model",
             enabled: false,
-            selected: ["SDXL_beta::stability.ai#6901"],
+            selected: ["SDXL 1.0"],
             noneMessage: "Failed to generate: No model selected.",
             mapToParam: el => el.modelName,
         },
@@ -188,7 +188,7 @@ export const useGeneratorStore = defineStore("generator", () => {
         }
         return selectedModelData.value?.description || "Not Found!";
     })
-    const selectedModel = ref("SDXL_beta::stability.ai#6901");
+    const selectedModel = ref("SDXL 1.0");
     const selectedModelData = computed<IModelData>(() => modelsData.value.find(el => el.name === selectedModel.value) || {});
     const filteredAvailableModels = computed(() => {
         if (availableModels.value.length === 0) return [];
@@ -197,7 +197,7 @@ export const useGeneratorStore = defineStore("generator", () => {
                 return el.value.includes("inpainting") && el.value !== "Stable Diffusion 2 Depth";
             }
             if (generatorType.value === "Img2Img") {
-                return el.value !== "stable_diffusion_2.0" && !el.value.includes("inpainting") && el.value !== "SDXL_beta::stability.ai#6901";
+                return el.value !== "stable_diffusion_2.0" && !el.value.includes("inpainting");
             }
             return !el.value.includes("inpainting") && el.value !== "pix2pix" && el.value !== "Stable Diffusion 2 Depth";
         });
@@ -458,7 +458,7 @@ export const useGeneratorStore = defineStore("generator", () => {
                                                         clip_skip: currentClipSkip,
                                                         karras: currentKarras,
                                                         hires_fix: currentHiResFix,
-                                                        n: (currentModel.indexOf('SDXL') > -1 ? 2 : 1) // SDXL requires 2 images.
+                                                        n: 1
                                                     },
                                                     nsfw: nsfw.value,
                                                     censor_nsfw: !nsfw.value,

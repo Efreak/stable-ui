@@ -43,7 +43,7 @@ const handleUrlParams = function() {
         prompt: paramMap.get("prompt") || "",
         sampler_name: paramMap.get("sampler_name") || "k_euler",
         seed: paramMap.get("seed") || "",
-        modelName: paramMap.get("model_name") || "SDXL_beta::stability.ai#6901",
+        modelName: paramMap.get("model_name") || "SDXL 1.0",
         steps: Number(paramMap.get("steps") || 30),
         cfg_scale: Number(paramMap.get("cfg_scale") || 7),
         height: Number(paramMap.get("height") || 512),

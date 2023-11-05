@@ -519,6 +519,7 @@ export const useGeneratorStore = defineStore("generator", () => {
                 if (queuedImage.waitData?.done) return;
 
                 if (!queuedImage.jobId) {
+                    await sleep(i * 1050);
                     const resJSON = await fetchNewID(queuedImage);
                     if (!resJSON) {
                         generationFailed(undefined, queuedImage);

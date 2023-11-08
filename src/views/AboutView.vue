@@ -10,7 +10,7 @@ import BaseLink from '@/components/BaseLink.vue';
         <h1 style="margin-top: 0">Efreak's fork</h1>
         <h3 style="margin-top: 0">THIS FORK WILL NOT BE MAINTAINED OR UODATED</h3>
         <div>This is a fork of aqualxx/stable-ui, an unmaintained frontend for <a href="https://aihorde.net">AI Horde</a> crowd-sourced stable diffusion. It contains all the same bugs and limitations the original stable-ui contains, but has been updated to support SDXL, which currently requires a batch size of 2, and recommends a minimum of 1024x1024. Instead of updating this properly, I've simply added a check to see if the model includes SDXL, and changed the requested number of images to 2; that means for every 1 SDXL image you request here, you'll get 2 images back instead of 1. The only niceties I've added beyond this is to set the default model to SDXL and the defaults size to 1024x1024. Everything else is the same.</div>
-        <div>Update: I applied a fix to the leaderboard, <a href="https://discord.com/channels/781145214752129095/1107629376889172098/1157447364827697182>as found by @super.skirv on Discord</a>. </div>
+        <div>Update: I applied a fix to the leaderboard, <a href="https://discord.com/channels/781145214752129095/1107629376889172098/1157447364827697182"> as found by @super.skirv on Discord</a>. </div>
         <div>Update: I applied a fix to space out requests because horde now has a rate limit on async endpoints. Since Horde now supports SDXL officially, I also swapped out sdxl_beta model name for SDXL 1.0 and removed the inpainting and image amount overrides from it.</div>
         <div></div>
         <div></div>

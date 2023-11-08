@@ -514,12 +514,11 @@ export const useGeneratorStore = defineStore("generator", () => {
             const availableQueue = queue.value.filter(el => !el.gathered && !el.failed);
             const t0 = performance.now() / 1000;
             await Promise.all(availableQueue.slice(0, getMaxRequests(availableQueue)).map(async (queuedImage, i) => {
-                await sleep(i * 100);
+                await sleep(i * 1050);
                 if (cancelled.value) return;
                 if (queuedImage.waitData?.done) return;
 
                 if (!queuedImage.jobId) {
-                    await sleep(i * 1050);
                     const resJSON = await fetchNewID(queuedImage);
                     if (!resJSON) {
                         generationFailed(undefined, queuedImage);

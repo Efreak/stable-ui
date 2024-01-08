@@ -19,6 +19,8 @@ Update: I applied a fix to space out requests because horde now has a rate limit
 now supports SDXL officially, I also swapped out sdxl_beta model name for SDXL 1.0 and removed the inpainting 
 and image amount overrides from it.
 
+Jan. 8, 2024: Added LoRa/TI support. In your prompt, use the syntax `<lora:id:strength>` or `<ti:id>` to add them to your request. For LoRas, put a 'v' before the id to use the version id instead. Not that for both loras and tis, only integer ids are supported. (Added by rbrtcs1)
+
 # stable-ui 🔥
 
 [Stable UI](https://aqualxx.github.io/stable-ui/) is a web user interface designed to generate, save, and view images using Stable Diffusion, with the goal being able to provide Stable Diffusion to anyone for 100% free.

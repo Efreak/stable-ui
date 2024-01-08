@@ -107,6 +107,45 @@ interface CarouselOutput {
     output: ImageData;
 }
 
+function updateParametersWithLorasAndTis(parameters: { prompt: string, loras?: { name: string, model: number, is_version: boolean }[], tis?: { name: string }[] }) {
+  let prompt = parameters.prompt;
+  let LORA_PATTERN = /<lora:v?[0-9]+:-?[0-9.]+>/g;
+  let TI_PATTERN = /<ti:[0-9]+>/g;
+  let loraMatches = prompt.match(LORA_PATTERN) || [];
+  let loras = loraMatches.map((match) => {
+    let data = match.substring(6); // Removes "<lora:"
+    data = data.slice(0, -1); // removes trailing '>'
+    let comps = data.split(":");
+    // ["12345", "1.0"]
+    let loraID = comps[0];
+    let isVersion = false;
+    if (loraID.startsWith("v")) {
+      loraID = loraID.substring(1);
+      isVersion = true;
+    }
+    let loraStr = parseFloat(comps[1].trim());
+    return {
+      name: loraID.trim(),
+      model: loraStr,
+      is_version: isVersion,
+    };
+  });
+  let tiMatches = prompt.match(TI_PATTERN) || [];
+  let tis = tiMatches.map((match) => {
+    let tiID = match.substring(4); // Removes "<ti:"
+    tiID = tiID.slice(0, -1); // removes trailing '>'
+    return {
+      name: tiID.trim(),
+    };
+  });
+  parameters.loras = loras;
+  parameters.tis = tis;
+  // Remove the codes from the prompt
+  prompt = prompt.replace(LORA_PATTERN, "");
+  prompt = prompt.replace(TI_PATTERN, "");
+  parameters.prompt = prompt;
+};
+
 export const useGeneratorStore = defineStore("generator", () => {
     const validGeneratorTypes = ['Text2Img', 'Img2Img', 'Inpainting'];
     const sourceGeneratorTypes = ['Img2Img', 'Inpainting'];
@@ -1009,6 +1048,7 @@ export const useGeneratorStore = defineStore("generator", () => {
      */
     async function fetchNewID(parameters: GenerationInputStable) {
         const optionsStore = useOptionsStore();
+        updateParametersWithLorasAndTis(parameters);
         const response: Response = await fetch(`${optionsStore.baseURL}/api/v2/generate/async`, {
             method: "POST",
             headers: {

@@ -141,6 +141,9 @@ export interface ModelPayloadRootStable {
    * @example 0.75
    */
   facefixer_strength?: number;
+
+  loras?: any[],
+  tis?: any[],
 }
 
 export interface RequestError {

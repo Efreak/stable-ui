@@ -13,6 +13,7 @@ import BaseLink from '@/components/BaseLink.vue';
         <div>Update: I applied a fix to the leaderboard, <a href="https://discord.com/channels/781145214752129095/1107629376889172098/1157447364827697182"> as found by @super.skirv on Discord</a>. </div>
         <div>Update: I applied a fix to space out requests because horde now has a rate limit on async endpoints. Since Horde now supports SDXL officially, I also swapped out sdxl_beta model name for SDXL 1.0 and removed the inpainting and image amount overrides from it.</div>
         <div>Jan. 8, 2024: Added LoRa/TI support. In your prompt, use the syntax `<lora:id:strength>` or `<ti:id>` to add them to your request. For LoRas, put a 'v' before the id to use the version id instead. Not that for both loras and tis, only integer ids are supported. (Added by rbrtcs1)</div>
+        <div>Update: I added LCM sampler. TODO: if upcoming worker changes allow it, add unipc sampler and allow use of dpm samplers in img2img. -Efreak</div>
         <div></div>
         <div></div>
         <h1 style="margin-top: 0">Stable UI</h1>

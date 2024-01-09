@@ -30,6 +30,7 @@ export interface ImageData {
         | "k_dpmpp_2m"
         | "dpmsolver"
         | "k_dpmpp_sde"
+        | "LCM"
         | "DDIM";
     seed?: string;
     steps?: number;

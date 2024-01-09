@@ -21,6 +21,8 @@ and image amount overrides from it.
 
 Jan. 8, 2024: Added LoRa/TI support. In your prompt, use the syntax `<lora:id:strength>` or `<ti:id>` to add them to your request. For LoRas, put a 'v' before the id to use the version id instead. Not that for both loras and tis, only integer ids are supported. (Added by rbrtcs1)
 
+Update: I added LCM sampler. TODO: if upcoming worker changes allow it, add unipc sampler and allow use of dpm samplers in img2img. -Efreak
+
 # stable-ui 🔥
 
 [Stable UI](https://aqualxx.github.io/stable-ui/) is a web user interface designed to generate, save, and view images using Stable Diffusion, with the goal being able to provide Stable Diffusion to anyone for 100% free.

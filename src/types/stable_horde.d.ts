@@ -69,6 +69,7 @@ export interface ModelPayloadRootStable {
     | "k_dpmpp_2m"
     | "dpmsolver"
     | "k_dpmpp_sde"
+    | "LCM"
     | "DDIM";
   /**
    * Obsolete Toggles used in the SD Webui. To be removed. Do not modify unless you know what you're doing.

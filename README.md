@@ -23,6 +23,8 @@ Jan. 8, 2024: Added LoRa/TI support. In your prompt, use the syntax `<lora:id:st
 
 Update: I added LCM sampler. TODO: if upcoming worker changes allow it, add unipc sampler and allow use of dpm samplers in img2img. -Efreak
 
+Update: I merged in a [aqualxx#21](https://github.com/aqualxx/stable-ui/pull/21), which adds metadata to jpegs.
+
 # stable-ui 🔥
 
 [Stable UI](https://aqualxx.github.io/stable-ui/) is a web user interface designed to generate, save, and view images using Stable Diffusion, with the goal being able to provide Stable Diffusion to anyone for 100% free.
